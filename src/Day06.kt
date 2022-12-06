@@ -1,6 +1,5 @@
-fun String.detect(windowSize: Int = 4): Int {
-    return this.windowed(size = windowSize).indexOfFirst { it.length == it.toSet().size } + windowSize
-}
+fun String.detect(windowSize: Int = 4) =
+    windowSize + this.windowed(size = windowSize).indexOfFirst { it.length == it.toSet().size }
 
 fun main() {
     fun part1(input: List<String>): Int {
